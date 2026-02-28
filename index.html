@@ -1,0 +1,73 @@
+<html>
+<head>
+  <title>FitLife Gym & Health Center - Home</title>
+
+  <script>
+    function showTip()
+    {
+      var tips = new Array(
+        "Health Tip: Drink water before and after your workout.",
+        "Health Tip: Warm up first to protect your joints.",
+        "Health Tip: Sleep helps recovery. Aim for 7-9 hours.",
+        "Health Tip: Consistency beats motivation. Show up.",
+        "Health Tip: Stretch after training to stay flexible."
+      );
+
+      var i = Math.floor(Math.random() * tips.length);
+      alert(tips[i]);
+      return;
+    }
+  </script>
+</head>
+
+<body bgcolor="#0b1b1a" text="#ffffff" link="#00ffcc" vlink="#00ffcc" alink="#00ffcc">
+  <center>
+    <font face="Courier New">
+      <h1>FitLife Gym & Health Center</h1>
+      <h3>Train Strong • Live Healthy • Recover Better</h3>
+    </font>
+
+    <hr width="80%">
+
+    <table width="80%" cellpadding="12" cellspacing="0" border="1" bgcolor="#102b29">
+      <tr>
+        <td>
+          <font face="Courier New">
+            <h3>Welcome to FitLife!</h3>
+            This website is your fitness capstone project: gym training + health habits + wellness.
+            <br><br>
+
+            <b>Programs:</b><br>
+            - Strength Training<br>
+            - Cardio & Conditioning<br>
+            - Nutrition & Healthy Habit Coaching<br>
+            - Recovery & Stretch Sessions<br><br>
+
+            <b>Motivation:</b><br>
+            "Small progress every day adds up."
+          </font>
+        </td>
+      </tr>
+    </table>
+
+    <br>
+    <input type="button" value="Tap for a Health Tip" onClick="showTip()">
+
+    <br><br>
+
+    <font face="Courier New">
+      <h3>Join FitLife</h3>
+      Click below to go to the membership form.
+      <br><br>
+      <a href="form.html">Go to Membership Form →</a>
+    </font>
+
+    <br><br>
+    <hr width="80%">
+
+    <font face="Courier New" size="2">
+      FitLife Gym & Health Center © 2025
+    </font>
+  </center>
+</body>
+</html>

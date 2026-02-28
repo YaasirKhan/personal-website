@@ -1,0 +1,198 @@
+<html>
+<head>
+  <title>FitLife Gym & Health Center - Membership Form</title>
+
+  <script>
+    function doClear()
+    {
+      document.GymForm.fullname.value = "";
+      document.GymForm.email.value = "";
+      document.GymForm.phone.value = "";
+      document.GymForm.age.value = "";
+
+      document.GymForm.membership.selectedIndex = 0;
+
+      document.GymForm.goal[0].checked = false;
+      document.GymForm.goal[1].checked = false;
+      document.GymForm.goal[2].checked = false;
+
+      document.GymForm.services[0].checked = false;
+      document.GymForm.services[1].checked = false;
+      document.GymForm.services[2].checked = false;
+
+      document.GymForm.session.selectedIndex = 0;
+
+      document.GymForm.agree.checked = false;
+
+      document.GymForm.notes.value = "";
+      return;
+    }
+
+    function doSubmit()
+    {
+      if (validateText() == false)
+      {
+        alert("Missing information:\nPlease enter your Full Name, Email, Phone, and Age.");
+        return;
+      }
+
+      if (validateMembership() == false)
+      {
+        alert("Missing information:\nPlease choose a Membership Type.");
+        return;
+      }
+
+      if (validateGoal() == false)
+      {
+        alert("Missing information:\nPlease select ONE main fitness goal.");
+        return;
+      }
+
+      if (validateServices() == false)
+      {
+        alert("Missing information:\nPlease select at least ONE service you want.");
+        return;
+      }
+
+      if (validateSession() == false)
+      {
+        alert("Missing information:\nPlease choose a preferred training session time.");
+        return;
+      }
+
+      if (validateAgree() == false)
+      {
+        alert("Missing information:\nYou must check the agreement box to submit.");
+        return;
+      }
+
+      alert("Success!\nYour FitLife membership form was submitted.");
+      return;
+    }
+
+    function validateText()
+    {
+      var fullname = document.GymForm.fullname.value;
+      if (fullname.length == 0) return false;
+
+      var email = document.GymForm.email.value;
+      if (email.length == 0) return false;
+      if (email.indexOf("@") == -1) return false;
+      if (email.indexOf(".") == -1) return false;
+
+      var phone = document.GymForm.phone.value;
+      if (phone.length == 0) return false;
+
+      var age = document.GymForm.age.value;
+      if (age.length == 0) return false;
+
+      return true;
+    }
+
+    function validateMembership()
+    {
+      if (document.GymForm.membership.selectedIndex == 0) return false;
+      return true;
+    }
+
+    function validateGoal()
+    {
+      if (document.GymForm.goal[0].checked) return true;
+      if (document.GymForm.goal[1].checked) return true;
+      if (document.GymForm.goal[2].checked) return true;
+      return false;
+    }
+
+    function validateServices()
+    {
+      if (document.GymForm.services[0].checked) return true;
+      if (document.GymForm.services[1].checked) return true;
+      if (document.GymForm.services[2].checked) return true;
+      return false;
+    }
+
+    function validateSession()
+    {
+      if (document.GymForm.session.selectedIndex == 0) return false;
+      return true;
+    }
+
+    function validateAgree()
+    {
+      if (document.GymForm.agree.checked) return true;
+      return false;
+    }
+  </script>
+</head>
+
+<body bgcolor="#071615" text="#ffffff" link="#00ffcc" vlink="#00ffcc" alink="#00ffcc">
+  <form name="GymForm">
+    <center>
+      <font face="Courier New">
+        <h1>FitLife Gym & Health Center</h1>
+        <h3>Membership Application Form</h3>
+        <a href="index.html">← Back to Home</a>
+      </font>
+      <hr width="80%">
+    </center>
+
+    <p>
+      <h4>Step 1: Personal Information</h4>
+      <font face="Courier New">
+        Full Name: <input name="fullname" size="50" type="text"><br><br>
+        Email: <input name="email" size="50" type="text"><br><br>
+        Phone: <input name="phone" size="50" type="text"><br><br>
+        Age: <input name="age" size="10" type="text"><br>
+      </font>
+    </p>
+
+    <p>
+      <h4>Step 2: Membership Type</h4>
+      <select name="membership">
+        <option value="">-- Select One --</option>
+        <option value="basic">Basic</option>
+        <option value="plus">Plus</option>
+        <option value="elite">Elite</option>
+      </select>
+    </p>
+
+    <p>
+      <h4>Step 3: Fitness Goal</h4>
+      <input name="goal" type="radio">Weight Loss
+      <input name="goal" type="radio">Muscle Gain
+      <input name="goal" type="radio">Health
+    </p>
+
+    <p>
+      <h4>Step 4: Services</h4>
+      <input name="services" type="checkbox">Training
+      <input name="services" type="checkbox">Nutrition
+      <input name="services" type="checkbox">Recovery
+    </p>
+
+    <p>
+      <h4>Step 5: Session Time</h4>
+      <select name="session">
+        <option value="">-- Select One --</option>
+        <option value="morning">Morning</option>
+        <option value="afternoon">Afternoon</option>
+        <option value="evening">Evening</option>
+      </select>
+    </p>
+
+    <p>
+      <h4>Extra Notes (Not validated)</h4>
+      <textarea name="notes" rows="4" cols="60"></textarea>
+    </p>
+
+    <p>
+      <input name="agree" type="checkbox"> I confirm my information is correct
+    </p>
+
+    <center>
+      <input type="button" value="Submit Form" onClick="doSubmit()">
+      <input type="button" value="Clear Entries" onClick="doClear()">
+    </center>
+  </form>
+</body>
+</html>

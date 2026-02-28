@@ -1,2 +1,15 @@
-# personal-website
-Personal website built using HTML with interactive form and structured layout
+# Personal Website
+
+This is a personal website developed using HTML.
+
+## Features
+
+- Homepage
+- User input form
+- Structured layout
+
+## Technologies
+
+- HTML
+
+Author: Yaasir Khan
